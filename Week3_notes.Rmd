@@ -1,10 +1,6 @@
 ---
 title: "Week3_notes"
-author: "Cathy Gao"
-date: "July 31, 2019"
-output:
-  pdf_document: default
-  html_document: default
+output: html_document
 ---
 
 ```{r setup, include=FALSE}

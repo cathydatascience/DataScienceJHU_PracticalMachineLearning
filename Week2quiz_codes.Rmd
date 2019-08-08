@@ -1,7 +1,5 @@
 ---
 title: "Week2_quiz"
-author: "Cathy Gao"
-date: "August 5, 2019"
 output: html_document
 ---
 

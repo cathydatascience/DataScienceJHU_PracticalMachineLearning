@@ -1,7 +1,5 @@
 ---
 title: "Week4_notes"
-author: "Cathy Gao"
-date: "August 1, 2019"
 output: html_document
 ---
 

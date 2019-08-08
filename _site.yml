@@ -4,6 +4,8 @@ output_dir: "docs"
 navbar:
   title: "Class Material"
   left:
+  - text: "Practical Machine Learning"
+    href: index.html
   - text: "Project Paper"
     href: https://cathydatascience.github.io/PracticalMachineLearning_Project/
   - text: "Notes"
@@ -27,9 +29,9 @@ navbar:
       - text: "Week 4"
         href: Week4quiz_codes.html
   right:
-    - text: How to publish project paper online
+    - text: How to publish project paper(s) online
       icon: fa-question fa-lg
-      href: https://cathydatascience.github.io/PracticalMachineLearning/
+      href: http://cathydatascience.github.io/showprojectsonline
 output:
  html_document:
   theme: cosmo

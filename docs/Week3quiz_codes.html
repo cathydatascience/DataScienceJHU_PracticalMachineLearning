@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Cathy Gao" />
+
+
+<title>Week3quiz_codes</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Class Material</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="https://cathydatascience.github.io/PracticalMachineLearning_Project/">Project Paper</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Notes
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Week1_notes.html">Week 1</a>
+    </li>
+    <li>
+      <a href="Week2_notes.html">Week 2</a>
+    </li>
+    <li>
+      <a href="Week3_notes.html">Week 3</a>
+    </li>
+    <li>
+      <a href="Week4_notes.html">Week 4</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Quizzes
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Week2quiz_codes.html">Week 2</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="Week3quiz_codes.html">Week 3</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="Week4quiz_codes.html">Week 4</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://cathydatascience.github.io/PracticalMachineLearning/">
+    <span class="fa fa-question fa-lg"></span>
+     
+    How to publish project paper online
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Week3quiz_codes</h1>
+<h4 class="author">Cathy Gao</h4>
+<h4 class="date">August 5, 2019</h4>
+
+</div>
+
+
+<div id="question-1" class="section level2">
+<h2>Question 1</h2>
+<p>Load the cell segmentation data from the AppliedPredictiveModeling package using the commands:</p>
+<pre class="r"><code>library(AppliedPredictiveModeling)
+data(segmentationOriginal)
+library(caret)</code></pre>
+<ol style="list-style-type: decimal">
+<li><p>Subset the data to a training set and testing set based on the Case variable in the dataset.</p></li>
+<li><p>Set the seed to 125 adn fit a CART model to predict Class with the rpart method using all predictor variables and default caret settings.</p></li>
+<li><p>In the final model what would be the prediction for cases with the following variable</p></li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>TotalIntench2=23,000; FiberWidthCh1=10, PerimStatusCh1=2</li>
+<li>TotalIntench2=50,000; FiberWidthCh1=10, PerimStatusCh1=100</li>
+<li>TotalIntench2=57,000; FiberWidthCh1=8, PerimStatusCh1=100</li>
+<li>TotalIntench2=8; FiberWidthCh1=100, PerimStatusCh1=2</li>
+</ol>
+<p>Tip: plot the resulting tree and use the plot to answer the question.</p>
+<pre class="r"><code>set.seed(125)
+#inTrain&lt;-createDataPartition(y=segmentationOriginal$Class, p=0.7, list=FALSE)
+inTrain&lt;-segmentationOriginal$Case
+training&lt;-segmentationOriginal[inTrain==&quot;Train&quot;, ]
+testing&lt;-segmentationOriginal[inTrain==&quot;Test&quot;, ]
+dim(training); dim(testing)
+
+modFit&lt;-train(Class~., method=&quot;rpart&quot;, data=training)
+print(modFit$finalModel)
+
+plot(modFit$finalModel, uniform=TRUE, main=&quot;Classification Tree&quot;) # dendogram
+text(modFit$finalModel, use.n=TRUE, all=TRUE, cex=0.8)
+
+library(rattle)
+fancyRpartPlot(modFit$finalModel)</code></pre>
+</div>
+<div id="question-3" class="section level2">
+<h2>Question 3</h2>
+<p>Load the olive oil data using the commands:</p>
+<pre class="r"><code>library(pgmm)
+data(olive)
+olive = olive[,-1]</code></pre>
+<p>These data contain information on 572 different Italian olive oils from multiple regions in Italy. Fit a classification tree where Area is the outcome variable. Then predict the value of area for the following data frame using the tree command with all defaults.</p>
+<pre class="r"><code>modFit&lt;-train(Area~., method=&quot;rpart&quot;, data=olive)
+print(modFit$finalModel)
+
+newdata = as.data.frame(t(colMeans(olive)))
+predict(modFit, newdata=newdata)</code></pre>
+<p>What is the resulting prediction? Is the resulting prediction strange? Why or why not?</p>
+<p>Answer: 2.783. It is strange because Area should be a qualitative variable - but tree is reporting the average value of Area as a numeric variable in the leaf predicted for newdata.</p>
+<p>Note: we can change the Area variable to a factor variable to avoid the above issue.</p>
+</div>
+<div id="question-4" class="section level2">
+<h2>Question 4</h2>
+<p>Load the South Africa Heart Disease Data and create training and test sets with the following code:</p>
+<pre class="r"><code>library(ElemStatLearn)
+data(SAheart)
+set.seed(8484)
+train = sample(1:dim(SAheart)[1],size=dim(SAheart)[1]/2,replace=F)
+trainSA = SAheart[train,]
+testSA = SAheart[-train,]</code></pre>
+<p>Then set the seed to 13234 and fit a logistic regression model (method=“glm”, be sure to specify family=“binomial”) with Coronary Heart Disease (chd) as the outcome and age at onset, current alcohol consumption, obesity levels, cumulative tabacco, type-A behavior, and low density lipoprotein cholesterol as predictors. Calculate the misclassification rate for your model using this function and a prediction on the “response” scale:</p>
+<pre class="r"><code>set.seed(13234)
+
+modFit&lt;-glm(as.factor(chd)~age+alcohol+obesity+tobacco+typea+ldl, family=binomial, data=trainSA)
+summary(modFit)
+
+predict1&lt;-predict(modFit, newdata=testSA)
+predict2&lt;-predict(modFit, newdata=trainSA)
+
+missClass = function(values,prediction){sum(((prediction &gt; 0.5)*1) != values)/length(values)}
+
+missClass(testSA$chd, predict1)
+missClass(trainSA$chd, predict2)</code></pre>
+<p>What is the misclassification rate on the training set? What is the misclassification rate on the test set?</p>
+<p>Answer: Test set misclassion: 0.31 and training set: 0.27.</p>
+</div>
+<div id="question-5" class="section level2">
+<h2>Question 5</h2>
+<p>Load the vowel.train and vowel.test data sets:</p>
+<pre class="r"><code>library(ElemStatLearn)
+data(vowel.train)
+data(vowel.test)</code></pre>
+<p>Set the variable y to be a factor variable in both the training and test set. Then set the seed to 33833. Fit a random forest predictor relating the factor variable y to the remaining variables.</p>
+<p>Read about variable importance in random forests here: <a href="http://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm#ooberr" class="uri">http://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm#ooberr</a></p>
+<p>The caret package uses by default the Gini importance.</p>
+<p>Calculate the variable importance using the varImp function in the caret package. What is the order of variable importance?</p>
+<p>[NOTE: Use randomForest() specifically, not caret, as there’s been some issues reported with that approach. 11/6/2016]</p>
+<pre class="r"><code>set.seed(33833)
+
+# caret package
+modFit&lt;-train(y~., data=vowel.train, method=&quot;rf&quot;, prox=TRUE)
+modFit$finalModel$importance
+
+# randomForest function 
+modFit2&lt;-randomForest(y~., data=vowel.train, importance=TRUE)
+importance(modFit2)
+varImp(modFit2)</code></pre>
+<p>Answer: the order of the variables is: x.2, x.1, x.5, x.6, x.8, x.4, x.9, x.3, x.7, x.10</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
