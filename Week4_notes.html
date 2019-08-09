@@ -853,6 +853,7 @@ getSymbols(&quot;GOOG&quot;, src=&quot;yahoo&quot;, from = from.dat, to = to.dat
 ## 
 ## This message is shown once per session and may be disabled by setting 
 ## options(&quot;getSymbols.warning4.0&quot;=FALSE). See ?getSymbols for details.</code></pre>
+<pre><code>## Warning: GOOG download failed; trying again.</code></pre>
 <pre><code>## [1] &quot;GOOG&quot;</code></pre>
 <pre class="r"><code>head(GOOG)</code></pre>
 <pre><code>##            GOOG.Open GOOG.High GOOG.Low GOOG.Close GOOG.Volume
@@ -1005,9 +1006,9 @@ qplot(Petal.Width,Petal.Length,colour=clusters,data=training)</code></pre>
 <pre class="r"><code>table(kMeans1$cluster,training$Species)</code></pre>
 <pre><code>##    
 ##     setosa versicolor virginica
-##   1      0          2        26
-##   2      0         33         9
-##   3     35          0         0</code></pre>
+##   1      0         31        35
+##   2     23          0         0
+##   3     12          4         0</code></pre>
 </div>
 <div id="build-model-with-predictors" class="section level3">
 <h3>Build model with predictors</h3>
@@ -1016,9 +1017,9 @@ qplot(Petal.Width,Petal.Length,colour=clusters,data=training)</code></pre>
 table(predict(modFit,training),training$Species)</code></pre>
 <pre><code>##    
 ##     setosa versicolor virginica
-##   1      0          0        24
-##   2      0         35        11
-##   3     35          0         0</code></pre>
+##   1      0         32        35
+##   2     25          0         0
+##   3     10          3         0</code></pre>
 </div>
 <div id="apply-on-test-set" class="section level3">
 <h3>Apply on test set</h3>
@@ -1027,9 +1028,9 @@ table(predict(modFit,training),training$Species)</code></pre>
 table(testClusterPred ,testing$Species)</code></pre>
 <pre><code>##                
 ## testClusterPred setosa versicolor virginica
-##               1      0          0        10
-##               2      0         15         5
-##               3     15          0         0</code></pre>
+##               1      0         15        15
+##               2     13          0         0
+##               3      2          0         0</code></pre>
 </div>
 </div>
 
